@@ -1,0 +1,14 @@
+/////////////////////////////////////////////
+// Name: AccountTriggerHandler
+// Author: Matthew Nicholson
+// Created: 8/29/21
+// Updated: 8/29/21
+// Description: Handler Class for AccountTrigger
+/////////////////////////////////////////////
+public class AccountTriggerHandler {
+// Method # 1: before deleting an account, if that record has a parent account,
+// 			   transfer credit value from account to be deleted to parent account.
+    public static void TransferCredits(){
+        
+    }
+}
