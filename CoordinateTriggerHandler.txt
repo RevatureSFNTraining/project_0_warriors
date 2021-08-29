@@ -1,0 +1,13 @@
+/////////////////////////////////////////////
+// Name: CoordinateTriggerHandler
+// Author: Matthew Nicholson
+// Created: 8/29/21
+// Updated: 8/29/21
+// Description: Handler Class for CoordinateTrigger
+/////////////////////////////////////////////
+public class CoordinateTriggerHandler {
+// Method # 1: Before insert of new coordinate, must update Account credits
+    public static void UpdateCredits(){
+        
+    }
+}
