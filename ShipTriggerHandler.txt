@@ -1,0 +1,17 @@
+/////////////////////////////////////////////
+// Name: ShipTriggerHandler
+// Author: Matthew Nicholson
+// Created: 8/27/21
+// Updated: 8/29/21
+// Description: Handler Class for ShipTrigger
+/////////////////////////////////////////////
+public class ShipTriggerHandler {
+//Method # 1: After Updating weapon types and/or equipment types,
+//			  All Clearances MUST be cleared from the ship record.
+//			  Step 1: Check if weapon types and/or equipment types 
+//			  		  were updated.
+//			  Step 2: Delete clearance record connected to the 
+//			  		  specific ship record.
+    public static void DeleteClearances(){
+    } 
+}
