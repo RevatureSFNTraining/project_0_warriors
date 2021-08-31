@@ -26,10 +26,12 @@ trigger ContractTrigger on Contact(before insert, before update, before delete, 
     switch on trigger.operationType{
         When AFTER_INSERT{
             //method call referencing trigger.new >pull out email and send email
+            ContractTriggerHandler.sendEmailConfirmation();
             
         }
         When AFTER_UPDATE{
             //method call referencing trigger.new >pull out email and send email
+            ContractTriggerHandler.sendEmailConfirmation();
         }
         When else{
             //do nothing

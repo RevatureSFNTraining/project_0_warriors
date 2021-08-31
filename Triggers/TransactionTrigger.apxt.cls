@@ -25,7 +25,7 @@ Soslsearch transaction number + trigger.size set loyalty discount with condition
 trigger TransactionTrigger on Transaction(before insert, before update, before delete, after insert, after update, after delete, after undelete){
     switch on trigger.operationType{
         When AFTER_INSERT{
-            //method call referencing trigger.new
+            TransactionTriggerHandler.updateLoyaltyDiscount(trigger.new);
             
         }
         When else{
