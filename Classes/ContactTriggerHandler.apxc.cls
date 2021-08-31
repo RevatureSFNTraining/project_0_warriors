@@ -9,7 +9,7 @@ Else do nothing
 */
 
 public class ContactTriggerHandler {
-    public void sendEmailConfirmation(List<Contact> newContats){
+    public static void sendEmailConfirmation(List<Contact> newContats){
         for(contact newContact: newContacts){
             //loop through new contacts.
             //if email.address = valid(basic regex)
