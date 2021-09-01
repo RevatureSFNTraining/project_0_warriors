@@ -11,7 +11,7 @@ trigger CoordinateTrigger on Coordinate__c (before insert, before update, before
             
 		}
         when BEFORE_UPDATE{
-            CoordinateTriggerHandler.UpdatePrice(Trigger.New);
+            CoordinateTriggerHandler.CheckPrice(Trigger.New);
             //CoordinateTriggerHandler.UpdateCredits(Trigger.New);
 		}
         when BEFORE_DELETE{
