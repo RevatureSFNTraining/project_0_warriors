@@ -2,7 +2,7 @@ public class ContactTriggerHandler {
 	public static void sendEmailConfirmation(List<Contact> newContacts){
         for(contact newContact: newContacts){
             //loop through new contacts.
-            if(newContact.Email != null){
+            if(newContact.Email != null && newContact.Send_Email_Confirmation_c == true){
                 //check email limit
                 if (Limits.getEmailInvocations()<Limits.getLimitEmailInvocations()){
                 EmailManager.sendMail(newContact.Email, 'Welcome to UberDog!', 'You have successfully set up your account with UberDog, were glad to have you!');
