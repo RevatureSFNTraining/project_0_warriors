@@ -6,6 +6,7 @@
  * Description: Prevents users from deleting open positions.
  */
 public with sharing class PositionTriggerHandler {
+    
     public static void beforeDeleteHandle(List<Position__c> PosList) {
         for (Position__c pos: PosList) {
             if (pos.Status__c == 'Open') {

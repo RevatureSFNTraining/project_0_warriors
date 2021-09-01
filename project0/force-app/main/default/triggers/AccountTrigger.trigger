@@ -1,14 +1,14 @@
-trigger ContactTrigger on Contact (before insert, before update, before delete, after insert, after update, after delete, after undelete) {
+trigger AccountTrigger on Account (before insert, before update, before delete, after insert, after update, after delete, after undelete) {
     
     switch on Trigger.OperationType {
         when BEFORE_INSERT {
-            ContactTriggerHandler.beforeInsertHandle(Trigger.new);
+            AccountTriggerHandler.preventDuplicateAccounts(Trigger.new);
         }
         when BEFORE_UPDATE {
-            ContactTriggerHandler.beforeUpdateHandle(Trigger.new, Trigger.oldMap);
+            // ...
         }
         when BEFORE_DELETE {
-            ContactTriggerHandler.beforeDeleteHandle(Trigger.old);
+            // ...
         }
         when AFTER_INSERT {
             // ...
