@@ -1,3 +1,10 @@
+/*
+ * Name: ContactTriggerHandler
+ * Author: Joseph Gay
+ * Date Created: 8/30/2021
+ * Date Modified: 9/1/2021
+ * Description: Prevent duplicate accounts.
+ */
 public with sharing class AccountTriggerHandler {
     public static void preventDuplicateAccounts(List<Account> acctList) {
         Set<String> newAcctName = new Set<String>();
