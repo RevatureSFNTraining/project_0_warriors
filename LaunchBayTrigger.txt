@@ -12,7 +12,7 @@ trigger LaunchBayTrigger on Launch_Bay__c (before insert, before update, before 
         when BEFORE_UPDATE{
 		}
         when BEFORE_DELETE{
-            LaunchBayTriggerHandler.NeedOneLaunchBay(Trigger.New);
+            LaunchBayTriggerHandler.NeedOneLaunchBay(Trigger.Old);
 		}
         when AFTER_INSERT{
 		}
