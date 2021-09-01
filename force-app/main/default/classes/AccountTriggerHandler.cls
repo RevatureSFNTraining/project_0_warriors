@@ -2,11 +2,11 @@ public class AccountTriggerHandler {
     public static void addManagementContract(List <Account> newaccounts){
         
         List <Management_Contract__c> contractList = new List<Management_Contract__C>();
-        //Find accounts with no management contract    
+        // Find accounts with no management contract    
         List<Account> NeedContract = [SELECT Id, Name FROM Account
              						  WHERE Id IN :newaccounts AND
              						  Id NOT IN (SELECT Account__c FROM Management_Contract__c)];
-        //Add contract template for those accounts                               
+        // Add contract template for those accounts                               
         for (Account acc : NeedContract) {
             contractList.add(new Management_Contract__C(
                 						Name = acc.Name + ' Contract - ' + System.Today().Year(),
