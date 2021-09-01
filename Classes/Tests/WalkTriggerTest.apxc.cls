@@ -9,35 +9,55 @@ public class WalkTriggerTest {
         dog_c doggy = new dog_c{Name='TestDog', contact= dogowner.id};
         //create uber_dog record
         uberdog_c walker = new uberdog_c{Name='TestWalker'};
-        insert(dogOwner);
-        insert(doggy);
-        insert(walker);
-    }    
-    
-    
- public TestMethod static void SINGLE_TEST(){
-        //WalkTrigger takes no parameters
-        //single insert
-        walk__c weeJaunt = new walk__c{Name='Wee little jaunt', dog_C=doggy.id, uberdog_c=walker.id}
-        system.debug(weeJaunt);
-        insert(weeJaunt);
         
-        //throw POSITIVE_TEST
-        POSITIVE_TEST(weejaunt);
-    }
-    public TestMethod static void BULK_TEST(){
-        //WalkTrigger takes no parameters
-        //200 insert
-        //this is the same as single. Only 1 trigger regardless of the number of inserts.
-    }
-    public TestMethod static void POSITIVE_TEST(walk_c testWalk){
-       
-        //verify single test succeeded
-         
-    system.debug('Dog:'+[SELECT ALL(Fields) on walk__c where id = testWalk.id]);
        
     }
-    public TestMethod static void NEGATIVE_TEST(){
-        //errors cannot exist. trigger is after insert, so there will always be 1 walk for the soql statement to select.
+   
+    @isTest static void Positive_Single_Test1() {
+        // create single record
+        walk__c weeJaunt = new walk__c{Name='Wee little jaunt', dog_C=doggy.id, uberdog_c=walker.id}
+        // begin testing, refresh governerlimites
+        Test.startTest();
+        Database.insert(dogOwner, false);
+        Database.insert(doggy, false);
+        Database.insert(walker, false);
+        Database.SaveResult[] results = Database.insert(weeJuant,false);
+        Test.stopTest();        
+        // assert that the results are correct 
+        System.assert(results[0].isSuccess()); 
     }
+
+    @isTest static void Positive_Bulk_Test() {
+        // error handling not in place
+
+        //create variables
+        string email = 'cdirkswager@gmail.com';
+        list <walk__c> newWalks = new list<walk__C>[200];
+        //build list
+        for(contact newWalk: newWalks){
+            newWalk.name='TESTWALK-'+i;
+            newWalk.dog__c = doggy.id;
+            newWalk.uberdog__c = walker.id;
+
+        }
+        
+        // begin testing list of walks
+
+        //error handling not setup, test under constructions
+        /*Test.startTest();
+        Database.SaveResult[] results = Database.insert(newWalks, false);
+        Test.stopTest();        
+        //assert that the results are correct
+        System.assert(results[0].isSuccess()); */
+
+        
+        }
+
+
+
+
+
+
+
+
 }
