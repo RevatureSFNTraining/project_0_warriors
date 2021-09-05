@@ -33,19 +33,3 @@ public class UpdateAccountBalance {
         return results;
     }
 }
-
-/*  
- // This would have a SOQL inside a loop, bad implementation.
- public static void updateBalance(Transaction__c t) {
-        // Get the bank account id.
-        List<Bank_Account__c> accList = [SELECT id, Balance__c FROM Bank_Account__c WHERE id IN (SELECT Bank_Account__c FROM Transaction__c WHERE id = :t.Id)];
-        Bank_Account__c acc = accList[0];
-        
-        if (t.Transaction_Type__c == 'Deposit') {
-            acc.Balance__c += t.Amount__c;
-        } else {
-            acc.Balance__c -= t.Amount__c;
-        }
-        update acc;
- } 
-*/
